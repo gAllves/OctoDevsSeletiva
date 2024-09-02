@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "JogoDoMaciel 2 - A vingança dos que não foram.sln"
+    "dotnet.defaultSolution": "OctoDevsSeletiva.sln"
 }
