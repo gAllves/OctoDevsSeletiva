@@ -11,11 +11,14 @@ public class PlayerMoviment : MonoBehaviour
     public Vector2 movement;
     public Vector2 mousePos;
 
+    public LogicScript logic;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,16 @@ public class PlayerMoviment : MonoBehaviour
         else
         {
             transform.localScale = new Vector3(0.1f,-0.045f,1);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            logic.gameOver();
+
         }
     }
 
