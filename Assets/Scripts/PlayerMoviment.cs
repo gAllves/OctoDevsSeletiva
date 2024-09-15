@@ -10,8 +10,8 @@ public class PlayerMoviment : MonoBehaviour
     public Camera cam;
     public Vector2 movement;
     public Vector2 mousePos;
-
     public LogicScript logic;
+    public Animator oAnimator;
 
 
     // Start is called before the first frame update
@@ -24,15 +24,11 @@ public class PlayerMoviment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+
+        Andar();
 
         //Movimentação do mouse
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        //Movimentação do player
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         //Rotação do player
         Vector2 lookDir = mousePos - rb.position;
@@ -42,11 +38,11 @@ public class PlayerMoviment : MonoBehaviour
         //Flip do player
         if (mousePos.x > 0)
         {
-            transform.localScale = new Vector3(0.1f,0.045f,1);
+            transform.localScale = new Vector3(2f,2f,1);
         }
         else
         {
-            transform.localScale = new Vector3(0.1f,-0.045f,1);
+            transform.localScale = new Vector3(2f,-2f,1);
         }
     }
 
@@ -58,6 +54,28 @@ public class PlayerMoviment : MonoBehaviour
             logic.gameOver();
 
         }
+    }
+
+    void Andar()
+    {
+        //Input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        //Animação
+        if (movement.x != 0 || movement.y != 0)
+        {
+            oAnimator.SetTrigger("isWalking");
+            oAnimator.ResetTrigger("isIdle");
+        }
+        else
+        {
+            oAnimator.SetTrigger("isIdle");
+            oAnimator.ResetTrigger("isWalking");
+        }
+
     }
 
     
