@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 408b97cb2380f9a43849665ead66c30a
-      internalID: 1934520883
+      spriteID: b1665e1eca5fdc14c990a911a2f175a9
+      internalID: 1038107877
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de3c0ceef689a354f87c9e4ec6d0cd56
-      internalID: -1116626623
+      spriteID: ffcd388ac3d7b0646a7c74dcba8e121b
+      internalID: 1615794378
       vertices: []
       indices: 
       edges: []
@@ -156,9 +156,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 165
-        y: 108
+        y: 109
         width: 56
-        height: 62
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 993ea1bebba02cd40845e9975fd4bc82
-      internalID: -1913237285
+      spriteID: a0912b8a58bd0e5419e0241b6057ccc3
+      internalID: 1564814532
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BladeDeCaxias_0: 1934520883
-      BladeDeCaxias_1: -1116626623
-      BladeDeCaxias_2: -1913237285
+      BladeDeCaxias_0: 1038107877
+      BladeDeCaxias_1: 1615794378
+      BladeDeCaxias_2: 1564814532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
