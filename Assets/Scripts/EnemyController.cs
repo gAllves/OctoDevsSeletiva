@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public GameObject player;
     public LogicScript logic;
 
+    public Animator oAnimator;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -19,11 +21,16 @@ public class EnemyController : MonoBehaviour
     }
     void Update()
     {
-        //Move o inimigo em direção ao player
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        if(player!=null){
+            //Move o inimigo em direção ao player
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
 
-        //Aumenta a velocidade do inimigo
-        aumentaVelocidade();
+            //Aumenta a velocidade do inimigo
+            aumentaVelocidade();
+        }
+        else{
+            oAnimator.SetTrigger("isIdle");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

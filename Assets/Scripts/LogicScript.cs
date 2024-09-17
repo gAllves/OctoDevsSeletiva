@@ -9,6 +9,7 @@ public class LogicScript : MonoBehaviour
     public GameObject gameOverScreen;
     public int score = 0;
     public SpawnManager spawnManager;  
+    public Text scoreText;
 
     public void Start(){
         spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
@@ -31,6 +32,7 @@ public class LogicScript : MonoBehaviour
     //Adiciona pontos ao score
     public void addScore(){
         score++;
+        scoreText.text = score.ToString();
     }
     public void gameChanging(){
         
