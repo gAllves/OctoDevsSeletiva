@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Bullet
   - Logic
+  - PortaCima
+  - SpawnManager
+  - PortaDireita
   layers:
   - Default
   - TransparentFX
