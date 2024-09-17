@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Se a bala colidir com objeto com tag "Wall" ela é destruida
@@ -13,6 +12,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         
-    }
-    
+    } 
 }

@@ -9,29 +9,31 @@ public class EnemyController : MonoBehaviour
     public GameObject player;
     public LogicScript logic;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
 
+        //Velocidade inicial do inimigo
         moveSpeed = 4f;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        //Move o inimigo em direção ao player
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+
+        //Aumenta a velocidade do inimigo
         aumentaVelocidade();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Se colidir com uma bala, destrói o inimigo e a bala e adiciona pontos
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            
             logic.addScore();
         }
     }

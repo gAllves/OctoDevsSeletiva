@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMoviment : MonoBehaviour
 {
-
     public float moveSpeed;
     public Rigidbody2D rb;
     public Camera cam;
@@ -12,16 +11,11 @@ public class PlayerMoviment : MonoBehaviour
     public Vector2 mousePos;
     public LogicScript logic;
     public Animator oAnimator;
-
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -35,7 +29,7 @@ public class PlayerMoviment : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
 
-        //Flip do player
+        //Flip do player (boneco ficar de cabeça pra baixo = mecanica)
         if (mousePos.x > 0)
         {
             transform.localScale = new Vector3(2f,2f,1);
@@ -48,11 +42,11 @@ public class PlayerMoviment : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //Se colidir com um inimigo, destrói o player e chama a função de game over
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
             logic.gameOver();
-
         }
     }
 

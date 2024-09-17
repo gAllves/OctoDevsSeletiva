@@ -6,13 +6,11 @@ using UnityEngine.UI;
 
 public class LogicScript : MonoBehaviour
 {
-
     public GameObject gameOverScreen;
     public int score = 0;
     public SpawnManager spawnManager;  
-    
+
     public void Start(){
-        
         spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager>();
     }
     public void Update(){

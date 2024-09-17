@@ -6,10 +6,8 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-
     public float bulletForce = 20f;
     public Animator oAnimator;
-
     public float firerate = 0.4f;
     public float canFire = -1f;
 
@@ -39,6 +37,7 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
 
+        //Define o tempo de espera para atirar novamente
         canFire = Time.time + firerate;
 
     }
