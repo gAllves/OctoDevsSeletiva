@@ -50,24 +50,28 @@ public class EnemyController : MonoBehaviour
             moveSpeed = 5f;
         }
 
-        if(logic.score >= 20){
+        else if(logic.score >= 20){
             moveSpeed = 6f;
         }
 
-        if(logic.score >= 30){
+        else if(logic.score >= 30){
             moveSpeed = 7f;
         }
 
-        if(logic.score >= 40){
+        else if(logic.score >= 40){
             moveSpeed = 8f;
         }
 
-        if(logic.score >= 50){
+        else if(logic.score >= 50){
             moveSpeed = 9f;
         }
 
-        if(logic.score >= 60){
+        else if(logic.score >= 60){
             moveSpeed = 10f;
+        }
+
+        else if(logic.score >= 100){
+            moveSpeed = 15f;
         }
         
     }
