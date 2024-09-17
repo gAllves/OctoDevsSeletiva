@@ -8,16 +8,16 @@ public class SpawnManager : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject enemyPrefab;
     public GameObject player;
-
+    public int spawnsAtivos = 2;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        InvokeRepeating("SpawnEnemy", 1f, 1.5f);
+        InvokeRepeating("SpawnEnemy", 2f, 1f);
     }
 
-    void Update()
+    public void Update()
     {
         if (player == null)
         {
@@ -25,9 +25,13 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    public void SpawnEnemy()
     {
-        int randomSpawnPoint = Random.Range(0, spawnPoints.Length);
+        int randomSpawnPoint = Random.Range(0, spawnsAtivos);
         Instantiate(enemyPrefab, spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+    }
+
+    public void acionaSpawn(int spawn){
+        spawnsAtivos = spawn;
     }
 }
